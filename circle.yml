@@ -1,8 +1,17 @@
 machine:
   services:
     - mysql
+    - docker
   environment:
     MYSQL_URL: mysql://ubuntu:@127.0.0.1:3306/circle_test
 test:
   pre:
     - npm run migrate:latest
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker build -t porcupinebookstore .
+      - docker tag -f porcupinebookstore stevenzeiler/porcupinebookstore
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push stevenzeiler/porcupinebookstore.com
