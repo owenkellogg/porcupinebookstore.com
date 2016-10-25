@@ -1,0 +1,12 @@
+
+mysql:
+  image: mysql:5.7.16
+  environment:
+    MYSQL_USER: mysql
+    MYSQL_DATABASE: porcupine_book_store
+    MYSQL_PASSWORD: 45e73b3ada9398b80274
+    MYSQL_ROOT_PASSWORD: 45e73b3ada9398b80274
+  expose:
+    - 3306:3306
+  ports:
+    - 3306:3306

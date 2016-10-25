@@ -4,9 +4,17 @@
   "description": "Online book catalogue for customers of Porcupine Book Store at The Praxeum",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*_test.js"
   },
   "keywords": [],
   "author": "Joe the Porcupine",
-  "license": "Bipcot"
+  "license": "Bipcot",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "dotenv": "^2.0.0",
+    "knex": "^0.12.6",
+    "mocha": "^3.1.2",
+    "mysql": "^2.11.1",
+    "url-parse": "^1.1.6"
+  }
 }

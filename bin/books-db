@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+
+var program = require("commander")
+var knex = require("../lib/knex")
+
+program
+  .command("list")
+  .action(() => {
+    knex('books').select().then(rows => {
+      if (rows.length === 0) {
+        console.log('no books found, use "bin/books-db add"')
+      } else {
+        console.log(rows)
+      }
+      process.exit(0)
+    })
+  })
+
+program
+  .command("add <title> <author> [isbn]")
+  .action((title, author, isbn) => {
+
+    knex('books').insert({
+      title: title,
+      author: author,
+      isbn: isbn
+    }).then(record => {
+      console.log(`added book ${record}`)
+      process.exit(0)
+    })
+  })
+
+program
+  .command("search:title <title>")
+  .action((title) => {
+
+    knex("books").where('title', 'like', `%${title}%`)
+    .select().then(rows => {
+      if (rows.length === 0) {
+        console.log(`no books found under "${title}"`)
+      } else {
+        console.log(rows)
+      }
+      
+    })
+  })
+
+program
+  .command("search:author <author>")
+  .action((author) => {
+
+    knex("books").where('author', 'like', `%${author}%`)
+    .select().then(rows => {
+      if (rows.length === 0) {
+        console.log(`no books found by ${author}`)
+      } else {
+        console.log(rows)
+      }
+      
+    })
+  })
+
+program.parse(process.argv)
+
