@@ -3,6 +3,7 @@ machine:
     MYSQL_URL: mysql://ubuntu:@localhost:3306/circle_test
   services:
     - docker
+    - mysql
 
 dependencies:
   pre:
