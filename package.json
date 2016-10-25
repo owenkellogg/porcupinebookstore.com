@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha test/*_test.js",
     "migrate:latest": "node_modules/knex/bin/cli.js migrate:latest",
-    "migrate:rollback": "node_modules/knex/bin/cli.js migrate:rollback"
+    "migrate:rollback": "node_modules/knex/bin/cli.js migrate:rollback",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "Joe the Porcupine",
@@ -15,10 +16,12 @@
     "chance": "^1.0.4",
     "commander": "^2.9.0",
     "dotenv": "^2.0.0",
+    "express": "^4.14.0",
     "knex": "^0.12.6",
     "mocha": "^3.1.2",
     "mysql": "^2.11.1",
     "url-parse": "^1.1.6",
-    "uuid": "^2.0.3"
+    "uuid": "^2.0.3",
+    "zombie": "^4.3.0"
   }
 }
