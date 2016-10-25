@@ -7,10 +7,8 @@ machine:
 
 dependencies:
   pre:
-    - sudo apt-get update -qq
-    - sudo pip install 'docker-compose<1.3' 'requests==2.5.3'
-    - docker-compose build
+    - docker build -t porcupinebookstorecom_webapp .
 test:
   override:
-    - docker-compose run webapp npm run migrate:latest
-    - docker-compose run webapp npm test
+    - docker run porcupinebookstorecom_webapp migrate:latest
+    - docker run porcupinebookstorecom_webapp npm test
