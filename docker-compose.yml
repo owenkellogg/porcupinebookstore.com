@@ -1,7 +1,7 @@
 webapp:
   build: .
   links:
-    - mysql:mysql
+    - mysql
   environment:
     MYSQL_URL: mysql://mysql:45e73b3ada9398b80274@mysql:3306/porcupine_book_store
 
@@ -12,5 +12,3 @@ mysql:
     MYSQL_DATABASE: porcupine_book_store
     MYSQL_PASSWORD: 45e73b3ada9398b80274
     MYSQL_ROOT_PASSWORD: 45e73b3ada9398b80274
-  ports:
-    - 3306:3306
