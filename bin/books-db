@@ -2,30 +2,33 @@
 
 var program = require("commander")
 var knex = require("../lib/knex")
+const BooksDB = require("../lib/books_db")
 
 program
   .command("list")
   .action(() => {
-    knex('books').select().then(rows => {
-      if (rows.length === 0) {
+    BooksDB.allBooks().then(books => {
+      if (books.length === 0) {
         console.log('no books found, use "bin/books-db add"')
       } else {
-        console.log(rows)
+        console.log(books)
       }
       process.exit(0)
     })
   })
 
 program
-  .command("add <title> <author> [isbn]")
-  .action((title, author, isbn) => {
+  .command("add <title> <author> [isbn] [image_url] [link_url]")
+  .action((title, author, isbn, image_url, link_url) => {
 
-    knex('books').insert({
+    BookDB.addBook({
       title: title,
       author: author,
-      isbn: isbn
-    }).then(record => {
-      console.log(`added book ${record}`)
+      isbn: isbn,
+      image_url: image_url,
+      link_url: link_url
+    }).then(book => {
+      console.log(`added book ${book}`)
       process.exit(0)
     })
   })
@@ -41,7 +44,7 @@ program
       } else {
         console.log(rows)
       }
-      
+      process.exit(0)
     })
   })
 
@@ -56,7 +59,7 @@ program
       } else {
         console.log(rows)
       }
-      
+      process.exit(0)
     })
   })
 
