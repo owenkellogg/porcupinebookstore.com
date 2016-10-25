@@ -4,7 +4,9 @@
   "description": "Online book catalogue for customers of Porcupine Book Store at The Praxeum",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/*_test.js"
+    "test": "mocha test/*_test.js",
+    "migrate:latest": "node_modules/knex/bin/cli.js migrate:latest",
+    "migrate:rollback": "node_modules/knex/bin/cli.js migrate:rollback"
   },
   "keywords": [],
   "author": "Joe the Porcupine",
