@@ -2,13 +2,8 @@ machine:
   environment:
     MYSQL_URL: mysql://ubuntu:@localhost:3306/circle_test
   services:
-    - docker
     - mysql
 
-dependencies:
-  pre:
-    - docker build -t porcupinebookstorecom_webapp .
 test:
-  override:
-    - docker run porcupinebookstorecom_webapp migrate:latest
-    - docker run porcupinebookstorecom_webapp npm test
+    - npm run migrate:latest
+    - npm test
