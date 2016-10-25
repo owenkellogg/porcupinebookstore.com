@@ -1,6 +1,6 @@
 machine:
   environment:
-    MYSQL_URL: mysql://ubuntu:@localhost:3306/circle_test
+    MYSQL_URL: mysql://ubuntu:@127.0.0.1:3306/circle_test
   services:
     - mysql
 
