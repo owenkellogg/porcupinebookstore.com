@@ -1,0 +1,12 @@
+{
+  "name": "porcupinebookstore.com",
+  "version": "1.0.0",
+  "description": "Online book catalogue for customers of Porcupine Book Store at The Praxeum",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Joe the Porcupine",
+  "license": "Bipcot"
+}
