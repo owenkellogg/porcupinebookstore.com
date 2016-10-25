@@ -21,7 +21,7 @@ program
   .command("add <title> <author> [isbn] [image_url] [link_url]")
   .action((title, author, isbn, image_url, link_url) => {
 
-    BookDB.addBook({
+    BooksDB.addBook({
       title: title,
       author: author,
       isbn: isbn,
