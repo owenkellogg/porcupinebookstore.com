@@ -12,6 +12,7 @@
   "author": "Joe the Porcupine",
   "license": "Bipcot",
   "dependencies": {
+    "chance": "^1.0.4",
     "commander": "^2.9.0",
     "dotenv": "^2.0.0",
     "knex": "^0.12.6",
