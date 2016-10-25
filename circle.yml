@@ -1,9 +1,8 @@
 machine:
-  environment:
-    MYSQL_URL: mysql://ubuntu:@127.0.0.1:3306/circle_test
   services:
     - mysql
-
+  environment:
+    MYSQL_URL: mysql://ubuntu:@127.0.0.1:3306/circle_test
 test:
   pre:
     - npm run migrate:latest
