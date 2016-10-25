@@ -12,6 +12,6 @@ deployment:
     branch: master
     commands:
       - docker build -t porcupinebookstore .
-      - docker tag -f porcupinebookstore stevenzeiler/porcupinebookstore
+      - docker tag -f porcupinebookstore stevenzeiler/porcupinebookstore.com:latest
       - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-      - docker push stevenzeiler/porcupinebookstore.com
+      - docker push stevenzeiler/porcupinebookstore.com:latest
