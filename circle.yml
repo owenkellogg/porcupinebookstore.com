@@ -5,6 +5,5 @@ machine:
     - mysql
 
 test:
-  override:
+  pre:
     - npm run migrate:latest
-    - npm test
