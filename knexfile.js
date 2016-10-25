@@ -11,6 +11,16 @@ module.exports = {
       password : dbURL.password,
       database : dbURL.pathname.replace("/", "")
     }
+  },
+
+  test : {
+    client: 'mysql',
+    connection: {
+      host : dbURL.hostname,
+      user : dbURL.username,
+      password : dbURL.password,
+      database : dbURL.pathname.replace("/", "")
+    }
   }
 }
 
