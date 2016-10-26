@@ -14,13 +14,13 @@ the excellent `knex` database driver and migration library.
 A single database table named `books` is used for the web
 application, with several columns:
 
-- id: integer primary key auto incremented
-- uid: uuid.v4 globally unique identifier
-- title: string | required
-- author: string | required
-- image_url: string
-- link_url: string
-- isbn: string
+- `id`: integer primary key auto incremented
+- `uid`: uuid.v4 globally unique identifier
+- `title`: string | required
+- `author`: string | required
+- `image_url`: string
+- `link_url`: string
+- `isbn`: string
 
 ## Core BooksDB Library
 
